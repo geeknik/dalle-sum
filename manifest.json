@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Website Summarizer and Visualizer",
+  "version": "1.0",
+  "description": "Summarizes websites and generates representative images using DALL-E",
+  "permissions": ["activeTab", "storage"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
